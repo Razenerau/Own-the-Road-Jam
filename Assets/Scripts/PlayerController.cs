@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float acceleration = 5f;
     public float deceleration = 3f;
     public float turnSpeed = 100f;
+    public CarTypes CarType;
 
     // --- Private internal variables ---
     private Rigidbody2D _rb;       // Reference to the physics component
@@ -68,5 +69,12 @@ public class PlayerController : MonoBehaviour
 
         // Apply the rotation through the physics system
         _rb.MoveRotation(_rb.rotation + rotation);
+    }
+
+    public enum CarTypes
+    {
+        BIKE,
+        CAR,
+        VAN
     }
 }

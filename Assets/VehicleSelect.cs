@@ -32,6 +32,7 @@ public class VehicleSelect : MonoBehaviour
         PlayerController.acceleration = Bike.acceleration;
         PlayerController.deceleration = Bike.deceleration;
         PlayerController.turnSpeed = Bike.turnSpeed;
+        PlayerController.CarType = PlayerController.CarTypes.BIKE;
 
         PlayerSpriteRenderer.color = Color.red;
 
@@ -45,6 +46,7 @@ public class VehicleSelect : MonoBehaviour
         PlayerController.acceleration = Car.acceleration;
         PlayerController.deceleration = Car.deceleration;
         PlayerController.turnSpeed = Car.turnSpeed;
+        PlayerController.CarType = PlayerController.CarTypes.CAR;
 
         PlayerSpriteRenderer.color = Color.green;
 
@@ -56,6 +58,7 @@ public class VehicleSelect : MonoBehaviour
         PlayerController.acceleration = Van.acceleration;
         PlayerController.deceleration = Van.deceleration;
         PlayerController.turnSpeed = Van.turnSpeed;
+        PlayerController.CarType = PlayerController.CarTypes.VAN;
 
         PlayerSpriteRenderer.color = Color.blue;
 
