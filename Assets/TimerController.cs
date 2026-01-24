@@ -7,7 +7,7 @@ public class TimerController : MonoBehaviour
 {
     public TextMeshProUGUI TimerText;
 
-    private float timeElapsed = 0f;
+    public float timeElapsed = 0f;
 
     void Update()
     {

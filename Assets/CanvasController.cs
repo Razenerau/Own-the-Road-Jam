@@ -8,6 +8,10 @@ public class CanvasController : MonoBehaviour
     public GameObject MapCanvas;
     public GameObject SelectCanvas;
     public GameObject TimerCanvas;
+    public GameObject LossCanvas1;
+    public GameObject LossCanvas2;
+    public GameObject VictoryCanvas1;
+    public GameObject VictoryCanvas2;
 
     public void OpenEmergencyCancas()
     {
@@ -28,5 +32,24 @@ public class CanvasController : MonoBehaviour
         EmergencyCanvas.SetActive(false);
         MapCanvas.SetActive(false);
         SelectCanvas.SetActive(true);
+    }
+
+    public void OpenLossCancas1()
+    {
+        LossCanvas1.SetActive(true);
+    }
+
+    public void OpenLossCancas2()
+    {
+        LossCanvas2.SetActive(true);
+    }
+
+    public void OpenVictoryCancas1()
+    {
+        VictoryCanvas1.SetActive(true);
+    }
+    public void OpenVictoryCancas2()
+    {
+        VictoryCanvas2.SetActive(true);
     }
 }

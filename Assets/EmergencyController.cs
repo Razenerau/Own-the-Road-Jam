@@ -11,24 +11,30 @@ public class EmergencyController : MonoBehaviour
     public float BikeTimer = 120;
     public float CarTimer = 200;
     public float VanTimer = 400;
+    public float TargetTime;
 
-    public int EmergencyNumber;
+    public int Scenario;
 
     private void Awake()
     {
-        EmergencyNumber = Random.Range(1, 4);   // returns 1, 2, or 3
+        Scenario = Random.Range(1, 4);   // returns 1, 2, or 3
 
-        switch (EmergencyNumber)
+        switch (Scenario)
         {
             case 1:
                 BikeMessage.SetActive(true);
+                TargetTime = BikeTimer;
                 break;
             case 2:
                 CarMessage.SetActive(true);
+                TargetTime = CarTimer;
                 break;
             case 3:
                 VanMessage.SetActive(true);
+                TargetTime = VanTimer;
                 break;
         }
     }
+
+
 }

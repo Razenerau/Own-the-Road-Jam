@@ -82,10 +82,12 @@ public class VehicleSelect : MonoBehaviour
             c.a = newAlpha;
             BGPanel.color = c;
 
-            Menu.position = new Vector2(Menu.position.x, Menu.position.y - t * 0.5f);
+            Menu.position = new Vector2(Menu.position.x, Menu.position.y - t);
 
             yield return null;
         }
+
+        Menu.position = new Vector2(1000,3000);
     }
 
     private void DisableButtons()
