@@ -992,7 +992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &170919414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1615,7 +1615,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &206261130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3016,7 +3016,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &416625929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7585,6 +7585,9 @@ MonoBehaviour:
   BikeButton: {fileID: 1534619787}
   CarButton: {fileID: 623470507}
   VanButton: {fileID: 1463700169}
+  BikeSprite: {fileID: 21300000, guid: f1f8738f10495a441b0f964a3e681468, type: 3}
+  CarSprite: {fileID: 21300000, guid: f9e045a001b2f1843a2a8ea1fda5d940, type: 3}
+  VanSprite: {fileID: 21300000, guid: fa39226b2c57dbf429a650d6c192dcf1, type: 3}
 --- !u!4 &1241660846
 Transform:
   m_ObjectHideFlags: 0
@@ -10492,7 +10495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1577995032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10634,7 +10637,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1579057825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11469,7 +11472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1636220306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14131,7 +14134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1949293045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16863,8 +16866,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.0141, z: 0}
-  m_LocalScale: {x: 1, y: 1.6031, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 685937350190278362}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16962,7 +16965,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5884658462362139270}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -17132,8 +17135,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0, g: 0.37192488, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: fa39226b2c57dbf429a650d6c192dcf1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -17188,6 +17191,7 @@ GameObject:
   - component: {fileID: 6957684038209495281}
   - component: {fileID: 2705627028157997536}
   - component: {fileID: 6957684038209495282}
+  - component: {fileID: 6957684038209495283}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -17250,6 +17254,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acbe7b208ade02e4c8aee09618759dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &6957684038209495283
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5884658462362139270}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.16}
+  m_Size: {x: 1.53, y: 3.42}
+  m_Direction: 0
 --- !u!61 &7130732453754934508
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17257,7 +17296,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481154462330270508}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:

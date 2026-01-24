@@ -14,11 +14,17 @@ public class VehicleSelect : MonoBehaviour
     public PlayerController Van;
     public UnityEngine.UI.Image BGPanel;
     public RectTransform Menu;
+    public CapsuleCollider2D Collider;
 
     [Header("Buttons")]
     public UnityEngine.UI.Button BikeButton;
     public UnityEngine.UI.Button CarButton;
     public UnityEngine.UI.Button VanButton;
+
+    [Header("Sprites")]
+    public Sprite BikeSprite;
+    public Sprite CarSprite;
+    public Sprite VanSprite;
 
     private void Awake()
     {
@@ -34,7 +40,7 @@ public class VehicleSelect : MonoBehaviour
         PlayerController.turnSpeed = Bike.turnSpeed;
         PlayerController.CarType = PlayerController.CarTypes.BIKE;
 
-        PlayerSpriteRenderer.color = Color.red;
+        PlayerSpriteRenderer.sprite = BikeSprite;
 
         StartCoroutine(FadeIn());
         DisableButtons();
@@ -48,7 +54,7 @@ public class VehicleSelect : MonoBehaviour
         PlayerController.turnSpeed = Car.turnSpeed;
         PlayerController.CarType = PlayerController.CarTypes.CAR;
 
-        PlayerSpriteRenderer.color = Color.green;
+        PlayerSpriteRenderer.sprite = CarSprite;
 
         StartCoroutine(FadeIn());
     }
@@ -60,7 +66,10 @@ public class VehicleSelect : MonoBehaviour
         PlayerController.turnSpeed = Van.turnSpeed;
         PlayerController.CarType = PlayerController.CarTypes.VAN;
 
-        PlayerSpriteRenderer.color = Color.blue;
+        Collider.size = new Vector2(1.53f, 3.42f);
+        Collider.offset = new Vector2(0, 0.16f);
+
+        PlayerSpriteRenderer.sprite = VanSprite;
 
         StartCoroutine(FadeIn());
     }
