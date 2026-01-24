@@ -232,7 +232,7 @@ MonoBehaviour:
   destination: {fileID: 0}
   sideTarget: {fileID: 0}
   detectionRadius: 2
-  detectMul: 4
+  detectMul: 2
   sideMove: 1
   obstacleLayer:
     serializedVersion: 2
