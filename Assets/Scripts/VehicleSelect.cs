@@ -42,6 +42,9 @@ public class VehicleSelect : MonoBehaviour
 
         PlayerSpriteRenderer.sprite = BikeSprite;
 
+        Collider.size = new Vector2(0.65f, 3f);
+        Collider.offset = new Vector2(0, 0.333f);
+
         StartCoroutine(FadeIn());
         DisableButtons();
     }
@@ -55,6 +58,9 @@ public class VehicleSelect : MonoBehaviour
         PlayerController.CarType = PlayerController.CarTypes.CAR;
 
         PlayerSpriteRenderer.sprite = CarSprite;
+
+        Collider.size = new Vector2(1.460213f, 3.661611f);
+        Collider.offset = new Vector2(0, 0);
 
         StartCoroutine(FadeIn());
     }
