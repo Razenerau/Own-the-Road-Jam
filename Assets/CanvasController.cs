@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CanvasController : MonoBehaviour
 {
@@ -52,4 +53,16 @@ public class CanvasController : MonoBehaviour
     {
         VictoryCanvas2.SetActive(true);
     }
+
+    public void CloseTimerCanvas()
+    {
+        TimerCanvas.SetActive(false);
+    }
+
+    public void Reload()
+    {
+        Scene current = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(current.name);
+    }
+
 }

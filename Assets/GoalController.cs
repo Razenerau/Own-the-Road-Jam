@@ -23,6 +23,7 @@ public class GoalController : MonoBehaviour
             TimeReached = TimerController.timeElapsed;
             TargetTime = emergencyController.TargetTime;
             TimerController.gameObject.SetActive(false);
+            canvasController.CloseTimerCanvas();
             if (TimeReached > TargetTime)
             {
                 PeopleSaved = 0;
