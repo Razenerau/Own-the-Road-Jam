@@ -5,7 +5,6 @@ using UnityEngine;
 public class GoalController : MonoBehaviour
 {
     public int PeopleSaved;
-    public int PeopleInjured = 0;
     public int Scenario;
 
     public float TargetTime;
@@ -15,7 +14,8 @@ public class GoalController : MonoBehaviour
     public EmergencyController emergencyController;
     public PlayerController playerController;
     public CanvasController canvasController;
-    public CollisionController collisionController;
+   // public CollisionController collisionController;
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,6 +25,8 @@ public class GoalController : MonoBehaviour
             TargetTime = emergencyController.TargetTime;
             TimerController.gameObject.SetActive(false);
             canvasController.CloseTimerCanvas();
+
+            canvasController.OpenInjuredCanvas();
 
 
 

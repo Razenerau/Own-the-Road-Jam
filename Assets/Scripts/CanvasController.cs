@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +14,9 @@ public class CanvasController : MonoBehaviour
     public GameObject LossCanvas2;
     public GameObject VictoryCanvas1;
     public GameObject VictoryCanvas2;
+    public GameObject InjuredCanvas;
+
+    public TextMeshProUGUI InjuredText;
 
     public void OpenEmergencyCancas()
     {
@@ -57,6 +61,13 @@ public class CanvasController : MonoBehaviour
     public void CloseTimerCanvas()
     {
         TimerCanvas.SetActive(false);
+    }
+
+    public void OpenInjuredCanvas()
+    {
+        int peopleInjured = CollisionController.peopleInjured;
+        InjuredText.text = $"{peopleInjured} People Injured";
+        InjuredCanvas.SetActive(true);
     }
 
     public void Reload()

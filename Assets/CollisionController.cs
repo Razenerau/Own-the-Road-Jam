@@ -5,7 +5,14 @@ using UnityEngine;
 public class CollisionController : MonoBehaviour
 {
     public GoalController gameController;
-    public int peopleInjured;
+    public static int peopleInjured;
+
+    public static CollisionController Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
