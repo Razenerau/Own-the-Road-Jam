@@ -15,8 +15,20 @@ public class CanvasController : MonoBehaviour
     public GameObject VictoryCanvas1;
     public GameObject VictoryCanvas2;
     public GameObject InjuredCanvas;
+    public GameObject PauseCanvas;
 
     public TextMeshProUGUI InjuredText;
+
+    public bool IsPaused = false;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseCanvas.SetActive(!IsPaused);
+            IsPaused = !IsPaused;
+        }
+    }
 
     public void OpenEmergencyCancas()
     {

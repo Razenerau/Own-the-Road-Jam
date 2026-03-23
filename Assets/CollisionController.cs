@@ -7,6 +7,10 @@ public class CollisionController : MonoBehaviour
     public GoalController gameController;
     public static int peopleInjured;
 
+    [Header("SFX")]
+    public List<AudioClip> HitPersonList;
+    public AudioClip HitWall;
+
     public static CollisionController Instance;
 
     private void Awake()
@@ -20,6 +24,8 @@ public class CollisionController : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             peopleInjured++;
+
+            SFXManager.Instance.PlaySFX(HitPersonList, transform, 1f);
         }
     }
 }
