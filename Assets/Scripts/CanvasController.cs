@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class CanvasController : MonoBehaviour
 {
+    public static bool IsGameOver = false;
+
     public GameObject EmergencyCanvas;
     public GameObject MapCanvas;
     public GameObject SelectCanvas;
@@ -54,20 +56,24 @@ public class CanvasController : MonoBehaviour
     public void OpenLossCancas1()
     {
         LossCanvas1.SetActive(true);
+        IsGameOver = true;
     }
 
     public void OpenLossCancas2()
     {
         LossCanvas2.SetActive(true);
+        IsGameOver = true;
     }
 
     public void OpenVictoryCancas1()
     {
         VictoryCanvas1.SetActive(true);
+        IsGameOver = true;
     }
     public void OpenVictoryCancas2()
     {
         VictoryCanvas2.SetActive(true);
+        IsGameOver = true;
     }
 
     public void CloseTimerCanvas()
@@ -84,6 +90,7 @@ public class CanvasController : MonoBehaviour
 
     public void Reload()
     {
+        IsGameOver = false;
         Scene current = SceneManager.GetActiveScene();
         SceneManager.LoadScene(current.name);
     }

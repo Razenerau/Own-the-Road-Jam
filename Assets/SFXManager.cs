@@ -7,6 +7,7 @@ public class SFXManager : MonoBehaviour
 {
     public static SFXManager Instance;
     public GameObject PreFab;
+    public AudioClip ClickClip;
 
     private void Awake()
     {
@@ -15,6 +16,7 @@ public class SFXManager : MonoBehaviour
 
     public void PlaySFX(AudioClip clip, Transform t, float volume)
     {
+        if (CanvasController.IsGameOver) return;
         AudioSource source = Instantiate(PreFab, t.position, Quaternion.identity).GetComponent<AudioSource>();
         source.clip = clip;
         source.volume = volume;
@@ -26,6 +28,7 @@ public class SFXManager : MonoBehaviour
 
     public void PlaySFX(List<AudioClip> clipList, Transform t, float volume)
     {
+        if (CanvasController.IsGameOver) return;
         int random = Random.Range(0, clipList.Count - 1);
         AudioSource source = Instantiate(PreFab, t.position, Quaternion.identity).GetComponent<AudioSource>();
         source.clip = clipList[random];
@@ -34,5 +37,10 @@ public class SFXManager : MonoBehaviour
         source.Play();
 
         Destroy(source.gameObject, length);
+    }
+
+    public void PlayClick()
+    {
+        PlaySFX(ClickClip, transform, 1f);
     }
 }
