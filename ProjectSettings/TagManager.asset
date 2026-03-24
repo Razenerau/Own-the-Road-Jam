@@ -6,6 +6,7 @@ TagManager:
   tags:
   - People
   - Cars
+  - Walls
   layers:
   - Default
   - TransparentFX
