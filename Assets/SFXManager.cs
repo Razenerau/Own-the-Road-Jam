@@ -7,7 +7,12 @@ public class SFXManager : MonoBehaviour
 {
     public static SFXManager Instance;
     public GameObject PreFab;
+    public AudioSource MainAudioSource;
+
+    [Header("SFX/Music")]
     public AudioClip ClickClip;
+    public AudioClip GoodEnding;
+    public AudioClip BadEnding;
 
     private void Awake()
     {
@@ -42,5 +47,17 @@ public class SFXManager : MonoBehaviour
     public void PlayClick()
     {
         PlaySFX(ClickClip, transform, 1f);
+    }
+
+    public void PlayGoodEndMusic()
+    {
+        MainAudioSource.clip = GoodEnding;
+        MainAudioSource.Play();
+    }
+
+    public void PlayBadEndMusic()
+    {
+        MainAudioSource.clip = BadEnding;
+        MainAudioSource.Play();
     }
 }

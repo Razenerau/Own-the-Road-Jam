@@ -57,23 +57,27 @@ public class CanvasController : MonoBehaviour
     {
         LossCanvas1.SetActive(true);
         IsGameOver = true;
+        SFXManager.Instance.PlayBadEndMusic();
     }
 
     public void OpenLossCancas2()
     {
         LossCanvas2.SetActive(true);
         IsGameOver = true;
+        SFXManager.Instance.PlayBadEndMusic();
     }
 
     public void OpenVictoryCancas1()
     {
         VictoryCanvas1.SetActive(true);
         IsGameOver = true;
+        SFXManager.Instance.PlayGoodEndMusic();
     }
     public void OpenVictoryCancas2()
     {
         VictoryCanvas2.SetActive(true);
         IsGameOver = true;
+        SFXManager.Instance.PlayGoodEndMusic();
     }
 
     public void CloseTimerCanvas()
