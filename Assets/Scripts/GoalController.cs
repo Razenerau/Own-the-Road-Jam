@@ -76,6 +76,8 @@ public class GoalController : MonoBehaviour
 
                 }
             }
+
+            gameObject.SetActive(false);
         }
     }
 }

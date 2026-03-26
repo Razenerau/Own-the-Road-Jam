@@ -6,6 +6,8 @@ public class CollisionController : MonoBehaviour
 {
     public GoalController gameController;
     public static int peopleInjured;
+    public GameObject floatingTextPrefab;
+    public GameObject ParticleCanvas;
 
     [Header("SFX")]
     public List<AudioClip> HitPersonList;
@@ -29,6 +31,8 @@ public class CollisionController : MonoBehaviour
             collision.gameObject.SetActive(false);
             peopleInjured++;
 
+            ShowFloatingNumber(collision.gameObject, 1, ParticleCanvas.transform);  
+
             SFXManager.Instance.PlaySFX(HitPersonList, transform, 1f);
         }
 
@@ -40,6 +44,8 @@ public class CollisionController : MonoBehaviour
 
             peopleInjured += pplInjured;
 
+            ShowFloatingNumber(collision.gameObject, pplInjured, ParticleCanvas.transform);
+
             SFXManager.Instance.PlaySFX(HitCarList, transform, 0.7f);
         }
 
@@ -47,5 +53,21 @@ public class CollisionController : MonoBehaviour
         {
             SFXManager.Instance.PlaySFX(HitWall, transform, 1f);
         }
+    }
+
+    
+
+    public void ShowFloatingNumber(GameObject target, int number, Transform t)
+    {
+        // Position above object
+        Vector3 spawnPos = target.transform.position + Vector3.up * 2f;
+
+        // Instantiate
+        GameObject obj = Instantiate(floatingTextPrefab, spawnPos, Quaternion.identity);
+        obj.transform.SetParent(t);
+
+        // Set number text
+        FloatingText ft = obj.GetComponent<FloatingText>();
+        ft.SetText("-" + number.ToString());
     }
 }
