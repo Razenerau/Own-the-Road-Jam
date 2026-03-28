@@ -12,6 +12,4 @@ public class CarObstacleController : MonoBehaviour
         int rand = Random.Range(0, SpriteList.Count - 1);
         SpriteRenderer.sprite = SpriteList[rand];
     }
-
-   
 }

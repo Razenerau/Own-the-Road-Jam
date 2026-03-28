@@ -25,7 +25,6 @@ public class FloatingText : MonoBehaviour
 
     void Update()
     {
-        // Move up
         transform.position += Vector3.up * floatSpeed * Time.deltaTime;
 
         // Fade out over time
@@ -36,7 +35,6 @@ public class FloatingText : MonoBehaviour
         c.a = Mathf.Lerp(1f, 0f, t);
         textMesh.color = c;
 
-        // Destroy after lifetime
         if (timer >= lifetime)
         {
             Destroy(gameObject);

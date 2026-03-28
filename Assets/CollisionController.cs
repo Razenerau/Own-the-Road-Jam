@@ -59,14 +59,11 @@ public class CollisionController : MonoBehaviour
 
     public void ShowFloatingNumber(GameObject target, int number, Transform t)
     {
-        // Position above object
         Vector3 spawnPos = target.transform.position + Vector3.up * 2f;
 
-        // Instantiate
         GameObject obj = Instantiate(floatingTextPrefab, spawnPos, Quaternion.identity);
         obj.transform.SetParent(t);
 
-        // Set number text
         FloatingText ft = obj.GetComponent<FloatingText>();
         ft.SetText("-" + number.ToString());
     }
